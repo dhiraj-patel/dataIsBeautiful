@@ -2,3 +2,8 @@ Team LaEnsemble [ Dhiraj Patel (PM), Asher Lasday, Henry Zhang ]
 
 asherL -- 2017-03-24 16:00
 -- Added csv files which contain drone strike data.
+
+dhirajP -- 2017-03-27 13:20
+-- received feedback from 2 other teams that helped us decide to go with an SVG over a canvas, as it would easier to use for us, and more aesthetically pleasing.
+
+-- Also, feedback helped to finalize the idea of drones strikes. Other teams liked the applicability and importance of the data we were representing.
