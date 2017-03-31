@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Drone Strike Effectiveness</h1>
+
+    <svg id= "svgID" style="border: 1px solid;">
+    </svg>
+
+    <br>
+
+    <button id = "clear"> Clear The SVG </button>
+    
+    <script src="savageStuff.js"></script>
+
+
+</body>
+</html>
+
