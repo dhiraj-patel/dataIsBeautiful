@@ -15,19 +15,28 @@ def presidents():
 	csv_f = csv.reader(f)
 	data = ""
 	k = 0
-	for row in csv_f:
+
+    x = open('data/strikes_by_president.tsv','a')
+    
+    #with open ('data/strikes_by_president.txt', 'a') as proc_seqf:
+        
+    for row in csv_f:
+        y = ""
 		i = 0
 		if k !=0:
 			for elem in row:
-        
 				if i == 0:
-					data = data + elem + ", "
+					y = y + elem + "/t "
 			
 				if i == 1:
-					data = data + elem + "/n "
+					y = y + elem
 				i+=1
+                
 		k+=1
-	print data
+        x.writerow(y)
+    x.close()
+    
+    print data
 	return data
 
 
