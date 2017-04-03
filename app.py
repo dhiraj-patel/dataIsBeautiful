@@ -2,18 +2,30 @@ from flask import Flask
 app = Flask(__name__)
 
 
-def presidents():
+data = ""
 
-    import csv
-    f= open('data/strikes_by_president.csv')
-    csv_f = csv.reader(f)
+import csv
+f= open('data/strikes_by_president.csv')
+csv_f = csv.reader(f)
 
-    for row in csv_f:
-        print row
-    
-    return csv_f
+k = 0
 
+for row in csv_f:
+	
+	i = 0
+        if k !=0:
+		for elem in row:
+        
+			if i == 0:
+				data = data + elem + ", "
+			if i == 1:
+				data = data + elem + "/n "
+			i+=1
+	k+=1
 
+print data
+
+return data
 
 
 '''
