@@ -13,13 +13,13 @@ for row in csv_f:
 print
 print
 print
-
+'''
 g= open('data/strike_data.csv')
 csv_g = csv.reader(g)
 
 for row in csv_g:
         print row
-
+'''
 
     
 @app.route('/')

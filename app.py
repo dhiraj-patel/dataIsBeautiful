@@ -2,17 +2,20 @@ from flask import Flask
 app = Flask(__name__)
 
 
-import csv
+def presidents():
 
-f= open('data/strikes_by_president.csv')
-csv_f = csv.reader(f)
+    import csv
+    f= open('data/strikes_by_president.csv')
+    csv_f = csv.reader(f)
 
-for row in csv_f:
-    print row
+    for row in csv_f:
+        print row
+    
+    return csv_f
 
-print
-print
-print
+
+
+
 '''
 g= open('data/strike_data.csv')
 csv_g = csv.reader(g)
