@@ -7,3 +7,9 @@ dhirajP -- 2017-03-27 13:20
 -- received feedback from 2 other teams that helped us decide to go with an SVG over a canvas, as it would easier to use for us, and more aesthetically pleasing.
 
 -- Also, feedback helped to finalize the idea of drones strikes. Other teams liked the applicability and importance of the data we were representing.
+
+asherL -- 2017-04-02 22:00
+-- created function to return values from strikes_by_president 
+
+asherL -- 2017-04-03 14:00
+-- attempted to write to tsv file through python
