@@ -8,8 +8,14 @@ dhirajP -- 2017-03-27 13:20
 
 -- Also, feedback helped to finalize the idea of drones strikes. Other teams liked the applicability and importance of the data we were representing.
 
+yhzhan -- 2017-03-31 12:17
+-- updated readme, expanded everything
+
 asherL -- 2017-04-02 22:00
 -- created function to return values from strikes_by_president 
+
+yhzhan -- 2017-04-02 14:04
+-- re-routed main, started index
 
 asherL -- 2017-04-03 14:00
 -- attempted to write to tsv file through python
@@ -17,5 +23,11 @@ asherL -- 2017-04-03 14:00
 asherL -- 2017-04-04 14:00
 -- worked with Henry to get 1st graph up and running
 
+yhzhan -- 2017-04-04 14:04
+-- worked on the young index
+
 asherL -- 2017-04-05 14:00
 -- reworked 1st graph until it worked, set up other 3 graphs, dealt w/ file organizational stuff
+
+yhzhan -- 2017-04-05 14:04
+-- debugged graph problems, fixed flask issues, worked on layout
