@@ -38,8 +38,8 @@ for row in csv_g:
     
 @app.route('/')
 def hello():
-	#return url_for('static', filename='youngerindex.html')
-    return render_template('youngerindex.html')
+	#return url_for('static', filename='strikes.html')
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run()
