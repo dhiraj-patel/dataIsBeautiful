@@ -31,11 +31,3 @@ asherL -- 2017-04-05 14:00
 
 yhzhan -- 2017-04-05 14:04
 -- debugged graph problems, fixed flask issues, worked on layout
-
-dhirajP -- 2017-04-04 22:00
--- fixing up the graphs, adding some css to each of the pages.
-
-dhirajP -- 2017-04-05 00:30
--- Created the homepage and started linking each of the d3 graphs to the home page
--- Added bootstrap and CSS to homepage, and reorganized the rest of the graph pages.
-
