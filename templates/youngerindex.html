@@ -55,9 +55,22 @@ body {
 }
 </style>
 <body>
+
+<button id="switch">switcher</button>
+
+
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script>
+
+
+var button = document.getElementById("switch");
+console.log(button.getAttribute("id"));
+
+
+
+
+
 
 var margin = {top: 40, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
@@ -131,5 +144,12 @@ function type(d) {
   d.strikes = +d.strikes;
   return d;
 }
+
+function clearsvg(){
+  var svg = d3.select("svg");
+  svg.selectAll("*").remove();
+}
+
+button.addEventListener("click",clearsvg);
 
 </script>
