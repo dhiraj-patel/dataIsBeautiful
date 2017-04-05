@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 def presidents():
@@ -31,7 +31,6 @@ def presidents():
 '''
 g= open('data/strike_data.csv')
 csv_g = csv.reader(g)
-
 for row in csv_g:
         print row
 '''
@@ -39,7 +38,8 @@ for row in csv_g:
     
 @app.route('/')
 def hello():
-    return render_template('index.html')
+	#return url_for('static', filename='youngerindex.html')
+    return render_template('youngerindex.html')
 
 if __name__ == '__main__':
     app.run()

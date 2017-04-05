@@ -55,28 +55,15 @@ body {
 }
 </style>
 <body>
-
-<button id="switch">switcher</button>
-
-
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script>
-
-
-var button = document.getElementById("switch");
-console.log(button.getAttribute("id"));
-
-
-
-
-
 
 var margin = {top: 40, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var formatPercent = d3.format("");
+var formatPercent = d3.format(".0%");
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -97,7 +84,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>Strikes:</strong> <span style='color:red'>" + d.strikes + "</span>";
+    return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
   })
 
 var svg = d3.select("body").append("svg")
@@ -109,8 +96,8 @@ var svg = d3.select("body").append("svg")
 svg.call(tip);
 
 d3.tsv("yungdata.tsv", type, function(error, data) {
-  x.domain(data.map(function(d) { return d.president; }));
-  y.domain([0, d3.max(data, function(d) { return d.strikes; })]);
+  x.domain(data.map(function(d) { return d.letter; }));
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -125,31 +112,24 @@ d3.tsv("yungdata.tsv", type, function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Strikes");
+      .text("Frequency");
 
   svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return x(d.president); })
+      .attr("x", function(d) { return x(d.letter); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.strikes); })
-      .attr("height", function(d) { return height - y(d.strikes); })
+      .attr("y", function(d) { return y(d.frequency); })
+      .attr("height", function(d) { return height - y(d.frequency); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 
 });
 
 function type(d) {
-  d.strikes = +d.strikes;
+  d.frequency = +d.frequency;
   return d;
 }
-
-function clearsvg(){
-  var svg = d3.select("svg");
-  svg.selectAll("*").remove();
-}
-
-button.addEventListener("click",clearsvg);
 
 </script>
