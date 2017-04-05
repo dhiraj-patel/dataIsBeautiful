@@ -97,7 +97,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>Strikes:</strong> <span style='color:red'>" + d.strikes + "</span>";
+    return "<strong>Civilians Killed:</strong> <span style='color:red'>" + d.civilians + "</span>";
   })
 
 var svg = d3.select("body").append("svg")
@@ -108,9 +108,9 @@ var svg = d3.select("body").append("svg")
 
 svg.call(tip);
 
-d3.tsv("../data/tstrikes.tsv", type, function(error, data) {
+d3.tsv("civilians.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.president; }));
-  y.domain([0, d3.max(data, function(d) { return d.strikes; })]);
+  y.domain([0, d3.max(data, function(d) { return d.civilians; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -125,7 +125,7 @@ d3.tsv("../data/tstrikes.tsv", type, function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Strikes");
+      .text("Civilians Killed");
 
   svg.selectAll(".bar")
       .data(data)
@@ -133,15 +133,15 @@ d3.tsv("../data/tstrikes.tsv", type, function(error, data) {
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.president); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.strikes); })
-      .attr("height", function(d) { return height - y(d.strikes); })
+      .attr("y", function(d) { return y(d.civilians); })
+      .attr("height", function(d) { return height - y(d.civilians); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 
 });
 
 function type(d) {
-  d.strikes = +d.strikes;
+  d.civilians = +d.civilians;
   return d;
 }
 
