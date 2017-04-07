@@ -58,21 +58,10 @@ body {
 </style>
 <body>
 
-<form action="home.html">
-<button type="submit" class = "btn btn-info" id="switch">Home-Page! </button>
-    </form>
-
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script>
-
-
-var button = document.getElementById("switch");
-console.log(button.getAttribute("id"));
-
-
-
 
 
 
@@ -112,7 +101,7 @@ var svg = d3.select("body").append("svg")
 
 svg.call(tip);
 
-d3.tsv("../data/civilians.tsv", type, function(error, data) {
+d3.tsv("../static/civilians.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.president; }));
   y.domain([0, d3.max(data, function(d) { return d.civilians; })]);
 
@@ -154,6 +143,5 @@ function clearsvg(){
   svg.selectAll("*").remove();
 }
 
-button.addEventListener("click",clearsvg);
 
 </script>
