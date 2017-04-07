@@ -39,7 +39,26 @@ for row in csv_g:
 @app.route('/')
 def hello():
 	#return url_for('static', filename='strikes.html')
-    return render_template('home.html')
+	return render_template('home.html')
+
+@app.route("/civilian")
+def civilian():
+	return render_template("civilians.html")
+
+
+@app.route("/militant")
+def militant():
+	return render_template("militants.html")
+
+@app.route("/leader")
+def leader():
+	return render_template("leaders.html")
+
+@app.route("/total")
+def total():
+	return render_template("strikes.html")
+
+
 
 if __name__ == '__main__':
     app.run()
